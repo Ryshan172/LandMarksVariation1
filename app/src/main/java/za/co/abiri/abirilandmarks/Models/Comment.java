@@ -12,20 +12,20 @@ public class Comment {
 
     }
 
-    public Comment(String content, String uid, String uimg, String uname) {
+    public Comment(String content, String uid, String uname) {
         this.content = content;
         this.uid = uid;
-        this.uimg = uimg;
+        //this.uimg = uimg;
         this.uname = uname;
         this.timestamp = ServerValue.TIMESTAMP;
 
     }
 
 
-    public Comment(String content, String uid, String uimg, String uname, Object timestamp) {
+    public Comment(String content, String uid, String uname, Object timestamp) {
         this.content = content;
         this.uid = uid;
-        this.uimg = uimg;
+        //this.uimg = uimg;
         this.uname = uname;
         this.timestamp = timestamp;
     }
@@ -47,6 +47,7 @@ public class Comment {
         this.uid = uid;
     }
 
+    /*
     public String getUimg() {
         return uimg;
     }
@@ -54,6 +55,8 @@ public class Comment {
     public void setUimg(String uimg) {
         this.uimg = uimg;
     }
+
+     */
 
     public String getUname() {
         return uname;

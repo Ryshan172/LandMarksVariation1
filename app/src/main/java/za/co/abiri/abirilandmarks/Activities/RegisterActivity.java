@@ -1,10 +1,7 @@
 package za.co.abiri.abirilandmarks.Activities;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,19 +13,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import za.co.abiri.abirilandmarks.R;
 
@@ -116,6 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
         //User Profile Photo code
         ImgUserPhoto = findViewById(R.id.regUserPhoto);
 
+        /*
         ImgUserPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,6 +121,9 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+
+         */
+
     }
 
     //CREATED METHODS
@@ -144,7 +139,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                             //Updated profile picture and name after creating account
                             //Created Method at bottom of code
-                            updateUserInfo( name ,pickedImageUri,mAuth.getCurrentUser());
+                            //updateUserInfo( name ,pickedImageUri,mAuth.getCurrentUser());
+
+                            //updateUserInfo( name ,pickedImageUri,mAuth.getCurrentUser());
+
+                            updateUserInfo( name , mAuth.getCurrentUser());
+
+                            //New change
+                            //updateUI();
                             
 
                         }
@@ -160,6 +162,38 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+
+    //Update User Info method - update Name and Photo
+    private void updateUserInfo(String name, FirebaseUser currentUser) {
+
+        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build();
+
+        //Updating currentUser profile
+        currentUser.updateProfile(profileUpdate)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if (task.isSuccessful()) {
+                            //Successfully updated user info
+                            //showMessage("Registration complete");
+                            //Method
+                            updateUI();
+                        }
+                    }
+                });
+
+
+
+
+    }
+
+    /// This is all removed so that users can register without a photo
+
+    ////Repeated Old Code ///
+    /*
     //Update User Info method - update Name and Photo
     private void updateUserInfo(String name, Uri pickedImageUri, FirebaseUser currentUser) {
 
@@ -175,10 +209,14 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
 
+
                         UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
                                 .setDisplayName(name)
                                 .setPhotoUri(uri)
                                 .build();
+
+
+
 
                         //Updating currentUser profile
                         currentUser.updateProfile(profileUpdate)
@@ -201,6 +239,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
+     */
+
+
 
     //updateUI created Method
     private void updateUI() {
@@ -219,7 +260,7 @@ public class RegisterActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
     }
 
-
+    /*
     private void openGallery() {
         //open gallery intent and wait for user to pick image
         //code to open and access gallery on phone
@@ -251,6 +292,8 @@ public class RegisterActivity extends AppCompatActivity {
         else
             openGallery();
     }
+
+     */
 
 
     //Override method

@@ -41,9 +41,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
     public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
 
         //Retrieving data and placing it in holders
-        Glide.with(mContext).load(mData.get(position).getUimg()).into(holder.img_user);
+        //Glide.with(mContext).load(mData.get(position).getUimg()).into(holder.img_user);
+
+        //Loading default user image
+        String urlImage = "https://firebasestorage.googleapis.com/v0/b/abiri-landmarks.appspot.com/o/users_photos%2Fusergen.png?alt=media&token=3ba0b6c1-0524-4356-be32-5ec3a05e1409";
+        Glide.with(mContext).load(urlImage).into(holder.img_user);
         holder.tv_name.setText(mData.get(position).getUname());
         holder.tv_content.setText(mData.get(position).getContent());
+
 
 
 
@@ -58,6 +63,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
         ImageView img_user;
         TextView tv_name,tv_content;
+
 
         public CommentViewHolder(@NonNull View itemView) {
             super(itemView);

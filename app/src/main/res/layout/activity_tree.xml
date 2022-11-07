@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.TreeActivity">
+
+        <EditText
+            android:id="@+id/treeName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Family Name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/popup_edittext_style"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/treeOrigin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Family Origin"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:background="@drawable/popup_edittext_style"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeName" />
+
+        <EditText
+            android:id="@+id/treeTotem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Family Totem"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:background="@drawable/popup_edittext_style"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeOrigin" />
+
+        <EditText
+            android:id="@+id/treeCulture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Culture and Traditions"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:background="@drawable/popup_edittext_style"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeTotem" />
+
+        <EditText
+            android:id="@+id/treeMembers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Members of the Family"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:background="@drawable/popup_edittext_style"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeCulture" />
+
+        <Button
+            android:textColor="@color/white"
+            android:id="@+id/treeBackBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Return"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeMembers" />
+
+        <ImageView
+            android:id="@+id/treeIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeBackBtn"
+            app:srcCompat="@drawable/ancestry" />
+
+        <ImageView
+            android:id="@+id/treeAddPost"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/circle_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeIcon"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_create_24" />
+
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/tree_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/treeAddPost"
+            app:layout_constraintEnd_toEndOf="@+id/treeAddPost"
+            app:layout_constraintStart_toStartOf="@+id/treeAddPost"
+            app:layout_constraintTop_toTopOf="@+id/treeAddPost" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

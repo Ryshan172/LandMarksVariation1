@@ -91,8 +91,12 @@ public class PostDetailActivity extends AppCompatActivity {
                 String comment_content = editTextComment.getText().toString();
                 String uid = firebaseUser.getUid();
                 String uname = firebaseUser.getDisplayName();
-                String uimg = firebaseUser.getPhotoUrl().toString();
-                Comment comment = new Comment(comment_content,uid,uimg,uname);
+                //String uimg = firebaseUser.getPhotoUrl().toString();
+
+                //Editing Comments - no user photo
+                //Comment comment = new Comment(comment_content,uid,uimg,uname);
+
+                Comment comment = new Comment(comment_content,uid,uname);
 
                 commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -124,8 +128,8 @@ public class PostDetailActivity extends AppCompatActivity {
         String postTitle = getIntent().getExtras().getString("title");
         txtPostTitle.setText(postTitle);
 
-        String userpostImage = getIntent().getExtras().getString("userPhoto");
-        Glide.with(this).load(userpostImage).into(imgUserPost);
+        //String userpostImage = getIntent().getExtras().getString("userPhoto");
+        //Glide.with(this).load(userpostImage).into(imgUserPost);
 
         String postDescription = getIntent().getExtras().getString("description");
         txtPostDesc.setText(postDescription);
@@ -138,7 +142,7 @@ public class PostDetailActivity extends AppCompatActivity {
         txtPostDateName.setText(postDetailName);
 
         //UserImage for comments
-        Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imgCurrentUser);
+        //Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imgCurrentUser);
 
         //get Post Id
         PostKey = getIntent().getExtras().getString("postKey");

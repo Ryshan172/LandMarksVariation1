@@ -19,19 +19,22 @@
         android:theme="@style/Theme.AbiriLandmarks"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.TreeActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.PostDetailActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".Activities.LocationActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".Activities.Home"
             android:exported="false"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.AbiriLandmarks.NoActionBar"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.AbiriLandmarks.NoActionBar" />
         <activity
             android:name=".Activities.LoginActivity"
             android:exported="true"
@@ -47,11 +50,11 @@
         <activity
             android:name=".Activities.HomeActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".Activities.RegisterActivity"
             android:exported="true"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
     </application>
 
 </manifest>

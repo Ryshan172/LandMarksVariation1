@@ -16,6 +16,24 @@
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
 
+    <!-- Attributions
+    <a href="https://www.flaticon.com/free-icons/grave" title="grave icons">Grave icons created by Umeicon - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/africa" title="africa icons">Africa icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/africa" title="africa icons">Africa icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/map" title="map icons">Map icons created by Freepik - Flaticon</a>
+
+    <a href="https://www.flaticon.com/free-icons/server" title="server icons">Server icons created by Eucalyp - Flaticon</a>
+
+    <a href="https://www.flaticon.com/free-icons/database" title="database icons">Database icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/death" title="death icons">Death icons created by Eucalyp - Flaticon</a>
+
+    <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Maxim Basinski Premium - Flaticon</a>
+
+    <a href="https://www.flaticon.com/free-icons/family-tree" title="family tree icons">Family tree icons created by Freepik - Flaticon</a>
+
+    Image by <a href="https://www.freepik.com/free-vector/gradient-purple-hexagonal-background_14121199.htm#query=purple%20gradient&position=14&from_view=keyword">Freepik</a>
+    -->
+
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>

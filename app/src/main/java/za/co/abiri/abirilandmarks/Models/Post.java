@@ -11,19 +11,19 @@ public class Post {
     private String coordinates;
     private String picture;
     private String userId;
-    private String userPhoto;
+    //private String userPhoto;
     private Object timeStamp;
     private String userName;
 
 
     //Constructors
-    public Post(String title, String description, String coordinates, String picture, String userId, String userName, String userPhoto) {
+    public Post(String title, String description, String coordinates, String picture, String userId, String userName) {
         this.title = title;
         this.description = description;
         this.coordinates = coordinates;
         this.picture = picture;
         this.userId = userId;
-        this.userPhoto = userPhoto;
+        //this.userPhoto = userPhoto;
         this.timeStamp = ServerValue.TIMESTAMP;
         this.userName = userName;
 
@@ -64,9 +64,12 @@ public class Post {
         return userId;
     }
 
+    /*
     public String getUserPhoto() {
         return userPhoto;
     }
+
+     */
 
     public Object getTimeStamp() {
         return timeStamp;
@@ -97,9 +100,12 @@ public class Post {
         this.userId = userId;
     }
 
+    /*
     public void setUserPhoto(String userPhoto) {
         this.userPhoto = userPhoto;
     }
+
+    */
 
     public void setTimeStamp(Object timeStamp) {
         this.timeStamp = timeStamp;

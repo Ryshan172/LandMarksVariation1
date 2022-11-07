@@ -24,7 +24,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -104,7 +103,7 @@ public class LocationActivity extends AppCompatActivity {
         popupClickProgress = findViewById(R.id.popup_progressBar1);
 
         //Loading User Image
-        Glide.with(LocationActivity.this).load(currentUser.getPhotoUrl()).into(popupUserImage);
+        //Glide.with(LocationActivity.this).load(currentUser.getPhotoUrl()).into(popupUserImage);
 
         //Add Post Click Listener
         popupAddBtn.setOnClickListener(new View.OnClickListener() {
@@ -141,8 +140,20 @@ public class LocationActivity extends AppCompatActivity {
                                             latitudeTextView.getText().toString(),
                                             imageDownloadLink,
                                             currentUser.getUid(),
+                                            currentUser.getDisplayName());
+
+
+                                    /*
+
+                                    //CREATE POST OBJECT AND FILL WITH VALUES
+                                    Post post = new Post(popupTitle.getText().toString(),
+                                            popupDescription.getText().toString(),
+                                            latitudeTextView.getText().toString(),
+                                            imageDownloadLink,
+                                            currentUser.getUid(),
                                             currentUser.getDisplayName(),
                                             currentUser.getPhotoUrl().toString());
+                                     */
 
                                     //ADD POST TO FIREBASE
                                     addPost(post);

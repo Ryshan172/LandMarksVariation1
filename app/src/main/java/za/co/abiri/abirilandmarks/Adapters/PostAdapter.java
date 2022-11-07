@@ -46,7 +46,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         //Filling with images / data
         holder.tvTitle.setText(mData.get(position).getTitle());
         Glide.with(mContext).load(mData.get(position).getPicture()).into(holder.imgPost);
-        Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
+        //Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
 
 
 
@@ -85,7 +85,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     postDetailActivity.putExtra("description",mData.get(position).getDescription());
                     postDetailActivity.putExtra("coordinates",mData.get(position).getCoordinates());
                     postDetailActivity.putExtra("postKey",mData.get(position).getPostKey());
-                    postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
+                    //postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
                     //Add username in
                     postDetailActivity.putExtra("userName",mData.get(position).getUserName());
 

@@ -21,7 +21,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/userphoto" />
+            app:srcCompat="@drawable/app_logo1" />
 
         <EditText
             android:textColor="@color/black"
@@ -138,9 +138,10 @@
             android:id="@+id/warningTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Photo is required"
+            android:text="Create an account"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/regName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

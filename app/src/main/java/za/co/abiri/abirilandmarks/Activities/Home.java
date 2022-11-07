@@ -20,7 +20,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,6 +39,7 @@ public class Home extends AppCompatActivity
     ImageView HomeUserImage,popupPostImage,popupAddBtn;
     TextView popupTitle,popupDescription,popupCoords;
     Button makePost;
+    Button makeTree;
     ProgressBar popupClickProgress;
 
 
@@ -155,7 +155,7 @@ public class Home extends AppCompatActivity
          */
 
         //Loading User Image
-        Glide.with(Home.this).load(currentUser.getPhotoUrl()).into(HomeUserImage);
+        //Glide.with(Home.this).load(currentUser.getPhotoUrl()).into(HomeUserImage);
 
         makePost = popAddPost.findViewById(R.id.postViewBtn);
         makePost.setOnClickListener(new View.OnClickListener() {
@@ -167,6 +167,19 @@ public class Home extends AppCompatActivity
             }
 
         });
+
+        //Go to family tree add page
+        makeTree = popAddPost.findViewById(R.id.treeAddBtn);
+        makeTree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),TreeActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+
 
         /*
         //Add Post Click Listener
@@ -280,14 +293,22 @@ public class Home extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.nav_username);
         TextView navUserEmail = headerView.findViewById(R.id.nav_user_email);
-        ImageView navUserPhoto = headerView.findViewById(R.id.nav_user_photo);
+
+        //ImageView navUserPhoto = headerView.findViewById(R.id.nav_user_photo);
 
         navUserEmail.setText(currentUser.getEmail());
         navUsername.setText(currentUser.getDisplayName());
 
         //User Glide to load user photo
         //Imported library https://github.com/bumptech/glide
+
+
+        /*Removed so that user photo does not load into imageview
+         User photos are disabled
+
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhoto);
+
+         */
 
 
     }
