@@ -5,8 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import za.co.abiri.abirilandmarks.Adapters.TreeAdapter;
+import za.co.abiri.abirilandmarks.Models.Tree;
 import za.co.abiri.abirilandmarks.R;
 
 /**
@@ -24,6 +38,13 @@ public class ProfileBFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // Views and referencing adapter and recyclerview
+    RecyclerView treeRecyclerView;
+    TreeAdapter treeAdapter;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    List<Tree> treeList;
 
     public ProfileBFragment() {
         // Required empty public constructor
@@ -60,6 +81,49 @@ public class ProfileBFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_b, container, false);
+        View fragmentView = inflater.inflate(R.layout.fragment_profile_b, container, false);
+
+        treeRecyclerView = fragmentView.findViewById(R.id.treeRecView);
+        treeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        treeRecyclerView.setHasFixedSize(true);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Trees");
+
+        return fragmentView;
     }
+
+    //OnStart added in
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // Retrieve Tree data from firebase
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                treeList = new ArrayList<>();
+                for (DataSnapshot treesnap: dataSnapshot.getChildren()) {
+
+                    Tree tree = treesnap.getValue(Tree.class);
+                    treeList.add(tree);
+
+                }
+
+                treeAdapter = new TreeAdapter(getActivity(),treeList);
+                treeRecyclerView.setAdapter(treeAdapter);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+
 }

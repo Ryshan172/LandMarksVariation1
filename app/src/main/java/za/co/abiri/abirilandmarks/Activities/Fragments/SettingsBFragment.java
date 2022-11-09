@@ -25,6 +25,8 @@ public class SettingsBFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
     public SettingsBFragment() {
         // Required empty public constructor
     }
@@ -61,5 +63,7 @@ public class SettingsBFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings_b, container, false);
+
+
     }
 }
