@@ -19,6 +19,9 @@
         android:theme="@style/Theme.AbiriLandmarks"
         tools:targetApi="31">
         <activity
+            android:name=".TreeDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.TreeActivity"
             android:exported="false" />
         <activity
