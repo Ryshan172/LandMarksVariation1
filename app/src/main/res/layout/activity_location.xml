@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activities.LocationActivity">
@@ -84,7 +82,7 @@
 
         <EditText
             android:textColorHint="@color/black"
-            android:hint="Birth Date, Death Date, Burial Date, Description of deceased"
+            android:hint="Birth Date"
             android:id="@+id/popup_description1"
             android:layout_width="361dp"
             android:layout_height="wrap_content"
@@ -98,28 +96,73 @@
             app:layout_constraintTop_toBottomOf="@+id/popup_title1" />
 
         <EditText
-            android:textColorHint="@color/black"
-            android:hint="Coordinates"
-            android:background="@drawable/popup_edittext_style"
-            android:id="@+id/popup_coords1"
+            android:id="@+id/edit_desc_life"
             android:layout_width="361dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/popup_edittext_style"
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="Death Date"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/popup_description1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/popup_description1"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/popup_description1" />
+
+        <EditText
+            android:id="@+id/edit_desc_burial"
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/popup_edittext_style"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:hint="Burial Date"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/edit_desc_life"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_desc_life" />
+
+        <EditText
+            android:id="@+id/edit_desc_detailperson"
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_edittext_style"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:hint="Description of Deceased"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/edit_desc_burial"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_desc_burial" />
+
+        <EditText
+            android:id="@+id/popup_coords1"
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_edittext_style"
+            android:ems="10"
+            android:hint="Coordinates"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_desc_detailperson" />
 
         <Button
-            android:textColor="@color/white"
             android:id="@+id/backBtn1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Return"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/popup_coords1"
-            app:layout_constraintHorizontal_bias="0.007"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/popup_coords1" />
 

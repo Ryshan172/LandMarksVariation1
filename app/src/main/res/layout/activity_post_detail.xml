@@ -15,12 +15,10 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
@@ -82,6 +80,21 @@
 
         <TextView
             android:lineSpacingExtra="8dp"
+            android:textColor="@color/purple_200"
+            android:id="@+id/post_detail_desc_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Birth Date:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_comment" />
+
+        <TextView
+            android:lineSpacingExtra="8dp"
             android:textColor="@color/black"
             android:id="@+id/post_detail_desc"
             android:layout_width="match_parent"
@@ -89,37 +102,130 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+            android:text="Lorem ipsum dolor sit amet, consectetur"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/post_detail_coords" />
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_desc_heading" />
+
+
+
+        <TextView
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/purple_200"
+            android:id="@+id/pst_death_date_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Death Date:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_desc" />
+
+        <TextView
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/black"
+            android:id="@+id/pst_death_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pst_death_date_heading" />
+
+
+        <TextView
+            android:id="@+id/pst_burial_date_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:lineSpacingExtra="8dp"
+            android:text="Burial Date:"
+            android:textColor="@color/purple_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pst_death_date" />
+
+        <TextView
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/black"
+            android:id="@+id/pst_burial_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pst_burial_date_heading" />
+
+
+        <TextView
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/purple_200"
+            android:id="@+id/pst_person_details_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Details:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pst_burial_date" />
+
+        <TextView
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/black"
+            android:id="@+id/pst_person_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pst_person_details_heading" />
+
 
         <ImageView
             android:id="@+id/post_detail_currentuser"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/post_detail_desc"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_coords"
             app:srcCompat="@drawable/usergen" />
 
         <EditText
-            android:background="@drawable/edittext_button_styleround"
-            android:hint="Add comment"
-            android:textColorHint="@color/black"
             android:id="@+id/post_detail_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:background="@drawable/edittext_button_styleround"
             android:ems="10"
+            android:hint="Add comment"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColorHint="@color/black"
             app:layout_constraintStart_toEndOf="@+id/post_detail_currentuser"
-            app:layout_constraintTop_toTopOf="@+id/post_detail_currentuser"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/post_detail_currentuser" />
 
         <Button
             android:id="@+id/post_detail_addbtn"
@@ -145,10 +251,11 @@
             android:id="@+id/rv_comment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/post_detail_comment" />
+            app:layout_constraintTop_toBottomOf="@+id/pst_person_details" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

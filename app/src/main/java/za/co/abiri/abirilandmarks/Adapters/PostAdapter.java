@@ -89,6 +89,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     //Add username in
                     postDetailActivity.putExtra("userName",mData.get(position).getUserName());
 
+                    // Additional fields
+                    postDetailActivity.putExtra("lifeDate",mData.get(position).getLifeDate());
+                    postDetailActivity.putExtra("burialDate",mData.get(position).getBurialDate());
+                    postDetailActivity.putExtra("personDetails",mData.get(position).getPersonDetails());
+
                     long timestamp = (long) mData.get(position).getTimeStamp();
                     postDetailActivity.putExtra("postDate",timestamp);
                     mContext.startActivity(postDetailActivity);

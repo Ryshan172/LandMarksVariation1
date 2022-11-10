@@ -15,9 +15,16 @@ public class Post {
     private Object timeStamp;
     private String userName;
 
+    // Additional fields
+    private String lifeDate;
+    private String burialDate;
+    private String personDetails;
+
 
     //Constructors
-    public Post(String title, String description, String coordinates, String picture, String userId, String userName) {
+    public Post(String title, String description, String coordinates, String picture, String userId, String userName,
+                String lifeDate, String burialDate, String personDetails) {
+
         this.title = title;
         this.description = description;
         this.coordinates = coordinates;
@@ -26,6 +33,11 @@ public class Post {
         //this.userPhoto = userPhoto;
         this.timeStamp = ServerValue.TIMESTAMP;
         this.userName = userName;
+
+        // Additional fields
+        this.lifeDate = lifeDate;
+        this.burialDate = burialDate;
+        this.personDetails = personDetails;
 
     }
 
@@ -107,11 +119,36 @@ public class Post {
 
     */
 
+    // Additional field getters and setters
     public void setTimeStamp(Object timeStamp) {
         this.timeStamp = timeStamp;
     }
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getLifeDate() {
+        return lifeDate;
+    }
+
+    public void setLifeDate(String lifeDate) {
+        this.lifeDate = lifeDate;
+    }
+
+    public String getBurialDate() {
+        return burialDate;
+    }
+
+    public void setBurialDate(String burialDate) {
+        this.burialDate = burialDate;
+    }
+
+    public String getPersonDetails() {
+        return personDetails;
+    }
+
+    public void setPersonDetails(String personDetails) {
+        this.personDetails = personDetails;
     }
 }

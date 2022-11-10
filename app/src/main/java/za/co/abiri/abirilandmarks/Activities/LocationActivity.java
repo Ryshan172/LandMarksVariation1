@@ -57,7 +57,7 @@ public class LocationActivity extends AppCompatActivity {
     FirebaseUser currentUser;
     //Dialog popAddPost;
     ImageView popupUserImage,popupPostImage,popupAddBtn;
-    TextView popupTitle,popupDescription,latitudeTextView;
+    TextView popupTitle,popupDescription,latitudeTextView,pstDDate,pstBrDate,pstDetails;
     //Button getlocation;
     ProgressBar popupClickProgress;
 
@@ -102,6 +102,12 @@ public class LocationActivity extends AppCompatActivity {
         popupAddBtn = findViewById(R.id.popup_add1);
         popupClickProgress = findViewById(R.id.popup_progressBar1);
 
+        //Additional Fields
+        pstDDate = findViewById(R.id.edit_desc_life);
+        pstBrDate = findViewById(R.id.edit_desc_burial);
+        pstDetails = findViewById(R.id.edit_desc_detailperson);
+
+
         //Loading User Image
         //Glide.with(LocationActivity.this).load(currentUser.getPhotoUrl()).into(popupUserImage);
 
@@ -115,6 +121,9 @@ public class LocationActivity extends AppCompatActivity {
                 //Testing All Input Fields
                 if (!popupTitle.getText().toString().isEmpty()
                 && !popupDescription.getText().toString().isEmpty()
+                && !pstDDate.getText().toString().isEmpty()
+                && !pstBrDate.getText().toString().isEmpty()
+                && !pstDetails.getText().toString().isEmpty()
                 && !latitudeTextView.getText().toString().isEmpty()
                 && pickedImageUri != null ) {
 
@@ -140,7 +149,10 @@ public class LocationActivity extends AppCompatActivity {
                                             latitudeTextView.getText().toString(),
                                             imageDownloadLink,
                                             currentUser.getUid(),
-                                            currentUser.getDisplayName());
+                                            currentUser.getDisplayName(),
+                                            pstDDate.getText().toString(),
+                                            pstBrDate.getText().toString(),
+                                            pstDetails.getText().toString());
 
 
                                     /*

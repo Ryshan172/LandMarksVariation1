@@ -37,7 +37,8 @@ public class PostDetailActivity extends AppCompatActivity {
 
     //Declarations
     ImageView imgPost,imgUserPost,imgCurrentUser;
-    TextView txtPostDesc,txtPostCoords,txtPostDateName,txtPostTitle;
+    TextView txtPostDesc,txtPostCoords,txtPostDateName,
+            txtPostTitle,txtPstDeathDate,txtPstBurialDate,txtPersonDetails;
     EditText editTextComment;
     Button btnAddComment;
     String PostKey;
@@ -72,6 +73,11 @@ public class PostDetailActivity extends AppCompatActivity {
         txtPostDesc = findViewById(R.id.post_detail_desc);
         txtPostCoords = findViewById(R.id.post_detail_coords);
         txtPostDateName = findViewById(R.id.post_detail_date);
+
+        // Additional fields
+        txtPstDeathDate = findViewById(R.id.pst_death_date);
+        txtPstBurialDate = findViewById(R.id.pst_burial_date);
+        txtPersonDetails = findViewById(R.id.pst_person_details);
 
         editTextComment = findViewById(R.id.post_detail_comment);
         btnAddComment = findViewById(R.id.post_detail_addbtn);
@@ -146,6 +152,16 @@ public class PostDetailActivity extends AppCompatActivity {
 
         //get Post Id
         PostKey = getIntent().getExtras().getString("postKey");
+
+        // Additional fields
+        String postDeathDate = getIntent().getExtras().getString("lifeDate");
+        txtPstDeathDate.setText(postDeathDate);
+
+        String postBurialDate = getIntent().getExtras().getString("burialDate");
+        txtPstBurialDate.setText(postBurialDate);
+
+        String postPersonDetails = getIntent().getExtras().getString("personDetails");
+        txtPersonDetails.setText(postPersonDetails);
 
         //RecyclerView for comments Method
         initRvComment();
