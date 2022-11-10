@@ -70,6 +70,7 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolderb>
                     Intent treeDetails = new Intent(mContext, TreeDetailActivity.class);
                     int position = getAdapterPosition();
 
+
                     // Retrieving data
                     treeDetails.putExtra("familyName",mData.get(position).getFamilyName());
                     treeDetails.putExtra("familyOrigin",mData.get(position).getFamilyOrigin());
@@ -81,6 +82,8 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.MyViewHolderb>
 
                     long timestamp = (long) mData.get(position).gettStamp();
                     treeDetails.putExtra("tStamp",timestamp);
+
+
                     mContext.startActivity(treeDetails);
 
 

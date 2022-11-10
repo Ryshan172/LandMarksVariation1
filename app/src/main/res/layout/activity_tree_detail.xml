@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Activities.TreeDetailActivity">
 
+
     <ImageView
         android:id="@+id/tree_detail_view"
         android:layout_width="100dp"
@@ -71,19 +72,36 @@
         app:srcCompat="@drawable/ic_baseline_person_24" />
 
     <TextView
-        android:id="@+id/tree_detail_origin"
-        android:textColor="@color/black"
+        android:id="@+id/tree_origin_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         android:lineSpacingExtra="8dp"
+        android:text="Family Origin:"
+        android:textColor="@color/purple_700"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tree_detail_userimg" />
+
+    <TextView
+        android:id="@+id/tree_detail_origin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="10dp"
+        android:lineSpacingExtra="8dp"
         android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tree_detail_userimg" />
+        app:layout_constraintTop_toBottomOf="@+id/tree_origin_heading" />
 
     <TextView
         android:id="@+id/tree_detail_totem"
@@ -140,6 +158,8 @@
         app:layout_constraintEnd_toStartOf="@+id/tree_detail_user"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tree_detail_user" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,11 +19,13 @@
         android:theme="@style/Theme.AbiriLandmarks"
         tools:targetApi="31">
         <activity
-            android:name=".TreeDetailActivity"
-            android:exported="false" />
+            android:name=".Activities.TreeDetailActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activities.TreeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activities.PostDetailActivity"
             android:exported="false"
