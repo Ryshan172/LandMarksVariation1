@@ -21,6 +21,7 @@
         <activity
             android:name=".Activities.TreeDetailActivity"
             android:exported="false"
+            android:label="Family Trees"
             android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activities.TreeActivity"
