@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -41,6 +42,9 @@ public class Home extends AppCompatActivity
     Button makePost;
     Button makeTree;
     ProgressBar popupClickProgress;
+
+    // Webview banner
+
 
 
 
@@ -309,6 +313,10 @@ public class Home extends AppCompatActivity
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhoto);
 
          */
+
+        // Loading webview
+        WebView notifyWeb = (WebView) headerView.findViewById(R.id.notify_web);
+        notifyWeb.loadUrl("https://portal.abiri.sturtium.com/resources/");
 
 
     }

@@ -75,6 +75,8 @@ public class ProfileBFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        getActivity().setTitle("Family Trees");
     }
 
     @Override
@@ -82,6 +84,9 @@ public class ProfileBFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_profile_b, container, false);
+
+
+        //getActivity().setTitle("Family Trees");
 
         treeRecyclerView = fragmentView.findViewById(R.id.treeRecView);
         treeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
