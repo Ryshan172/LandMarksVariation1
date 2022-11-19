@@ -9,6 +9,7 @@
         android:id="@+id/postViewBtn"
         android:layout_width="334dp"
         android:layout_height="53dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="6dp"
         android:text="Create Post"
         app:layout_constraintEnd_toStartOf="@+id/homeUserImg"
@@ -20,11 +21,12 @@
         android:id="@+id/treeAddBtn"
         android:layout_width="334dp"
         android:layout_height="53dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="6dp"
         android:text="Family Tree"
         app:layout_constraintBottom_toBottomOf="@id/treeAddBtn"
         app:layout_constraintEnd_toEndOf="@+id/postViewBtn"
-        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postViewBtn"
         app:layout_constraintVertical_bias="0.0" />
@@ -33,12 +35,15 @@
         android:id="@+id/pdfAddBtn"
         android:layout_width="334dp"
         android:layout_height="53dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="6dp"
-        android:text="Family Tree"
+        android:text="Obituary/Funeral Programme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/treeAddBtn"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/treeAddBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/treeAddBtn"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/homeUserImg"

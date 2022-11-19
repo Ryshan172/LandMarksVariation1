@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class PdfActivity extends AppCompatActivity {
 
     Button chooseBtn, fileUploadBtn;
     TextView txtFileName, txtFileType;
+    ProgressBar pdfProgress;
 
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
@@ -54,6 +56,7 @@ public class PdfActivity extends AppCompatActivity {
         fileUploadBtn = findViewById(R.id.btn_file_upload);
 
         txtFileType = findViewById(R.id.file_type_select);
+        pdfProgress = findViewById(R.id.pdf_progressBar);
 
         // Where the name of the file should appear when chosen
 
@@ -62,6 +65,8 @@ public class PdfActivity extends AppCompatActivity {
         fileUploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                fileUploadBtn.setVisibility(View.INVISIBLE);
+                pdfProgress.setVisibility(View.VISIBLE);
 
                 // Checking required inputs:
                 if (!txtFileName.getText().toString().isEmpty()
@@ -81,9 +86,10 @@ public class PdfActivity extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     String fileDownloadLink = uri.toString();
 
+
                                     // Pdf Upload Object
-                                    Pdfmod pdfmod = new Pdfmod(txtFileName.getText().toString(),
-                                            fileDownloadLink,
+                                    Pdfmod pdfmod = new Pdfmod(fileDownloadLink,
+                                            txtFileName.getText().toString(),
                                             currentUser.getUid(),txtFileType.getText().toString());
 
                                     addpdfmod(pdfmod);
@@ -109,7 +115,8 @@ public class PdfActivity extends AppCompatActivity {
                 }
                 else {
                     showMessage("Please complete add name and choose file");
-                    
+                    fileUploadBtn.setVisibility(View.VISIBLE);
+                    pdfProgress.setVisibility(View.INVISIBLE);
 
                 }
 
@@ -124,6 +131,7 @@ public class PdfActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 checkForPermission();
+
 
             }
         });
@@ -203,7 +211,8 @@ public class PdfActivity extends AppCompatActivity {
             //Reference needs to be saved to a Uri Variable
             pickedImageUri = data.getData();
 
-            //To actually show file in in field
+            //Makes button invisible when file is chosen
+            chooseBtn.setVisibility(View.INVISIBLE);
 
 
 
