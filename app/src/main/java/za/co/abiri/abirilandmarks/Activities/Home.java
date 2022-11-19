@@ -41,6 +41,7 @@ public class Home extends AppCompatActivity
     TextView popupTitle,popupDescription,popupCoords;
     Button makePost;
     Button makeTree;
+    Button addPdf;
     ProgressBar popupClickProgress;
 
     // Webview banner
@@ -178,6 +179,15 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),TreeActivity.class);
+                startActivity(i);
+            }
+        });
+
+        addPdf = popAddPost.findViewById(R.id.pdfAddBtn);
+        addPdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),PdfActivity.class);
                 startActivity(i);
             }
         });
