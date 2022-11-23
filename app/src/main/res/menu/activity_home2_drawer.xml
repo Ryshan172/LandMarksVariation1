@@ -14,6 +14,11 @@
             android:icon="@drawable/ic_treefam"
             android:title="Family Tree" />
 
+        <item
+            android:id="@+id/nav_pdfs"
+            android:icon="@drawable/ic_treefam"
+            android:title="Obituaries" />
+
         <!--
         <item
             android:id="@+id/nav_settings"

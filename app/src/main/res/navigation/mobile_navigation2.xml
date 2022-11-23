@@ -28,4 +28,12 @@
         android:name="za.co.abiri.abirilandmarks.Activities.ui.signout.SignOutFragment"
         android:label="@string/menu_signout"
         tools:layout="@layout/fragment_signout" />
+
+    <fragment
+        android:id="@+id/nav_pdfs"
+        android:name="za.co.abiri.abirilandmarks.Activities.Fragments.DownloadFragment"
+        android:label="Downloads"
+        tools:layout="@layout/fragment_download" />
+
+
 </navigation>

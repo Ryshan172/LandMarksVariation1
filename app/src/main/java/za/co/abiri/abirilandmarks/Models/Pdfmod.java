@@ -15,6 +15,11 @@ public class Pdfmod {
         this.filePickedType = filePickedType;
     }
 
+    // No argument constructor
+    public Pdfmod() {
+
+    }
+
     public String getFilepicked() {
         return filepicked;
     }

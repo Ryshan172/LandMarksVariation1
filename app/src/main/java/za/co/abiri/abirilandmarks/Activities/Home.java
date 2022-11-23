@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import za.co.abiri.abirilandmarks.Activities.Fragments.DownloadFragment;
 import za.co.abiri.abirilandmarks.Activities.Fragments.HomeBFragment;
 import za.co.abiri.abirilandmarks.Activities.Fragments.ProfileBFragment;
 import za.co.abiri.abirilandmarks.Activities.Fragments.SettingsBFragment;
@@ -274,7 +275,7 @@ public class Home extends AppCompatActivity
 
         } else if (id == R.id.nav_profile) {
 
-            getSupportActionBar().setTitle("Profile");
+            getSupportActionBar().setTitle("Family Trees");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new ProfileBFragment()).commit();
 
         } else if (id == R.id.nav_settings) {
@@ -282,6 +283,12 @@ public class Home extends AppCompatActivity
             getSupportActionBar().setTitle("Settings");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new SettingsBFragment()).commit();
 
+
+        }
+        else if (id == R.id.nav_pdfs) {
+
+            getSupportActionBar().setTitle("Download Files");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,new DownloadFragment()).commit();
 
         }
         else if (id == R.id.nav_signout) {
