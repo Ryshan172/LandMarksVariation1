@@ -332,8 +332,11 @@ public class Home extends AppCompatActivity
          */
 
         // Loading webview
+        /*
         WebView notifyWeb = (WebView) headerView.findViewById(R.id.notify_web);
         notifyWeb.loadUrl("https://portal.abiri.sturtium.com/resources/");
+
+         */
 
 
     }

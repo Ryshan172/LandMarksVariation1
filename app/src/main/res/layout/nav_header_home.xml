@@ -35,8 +35,12 @@
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle" />
 
+    <!---
+    Add back if necessary, or remove
     <WebView
         android:id="@+id/notify_web"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
+    -->
+
 </LinearLayout>
