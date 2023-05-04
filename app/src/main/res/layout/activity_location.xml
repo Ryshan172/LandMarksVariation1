@@ -8,7 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activities.LocationActivity">
+        tools:context=".Activities.LocationActivity"
+        android:background="@drawable/newbackground">
 
         <!--
         <EditText
@@ -113,12 +114,11 @@
             android:id="@+id/edit_desc_burial"
             android:layout_width="361dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:background="@drawable/popup_edittext_style"
             android:ems="10"
+            android:hint="Burial Date"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Burial Date"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/edit_desc_life"
             app:layout_constraintHorizontal_bias="1.0"
@@ -130,11 +130,10 @@
             android:layout_width="361dp"
             android:layout_height="wrap_content"
             android:background="@drawable/popup_edittext_style"
-            android:layout_marginTop="4dp"
             android:ems="10"
+            android:hint="Description of Deceased"
             android:inputType="textMultiLine"
             android:minHeight="48dp"
-            android:hint="Description of Deceased"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/edit_desc_burial"
             app:layout_constraintHorizontal_bias="1.0"

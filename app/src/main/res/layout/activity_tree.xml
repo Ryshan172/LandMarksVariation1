@@ -9,7 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activities.TreeActivity">
+        tools:context=".Activities.TreeActivity"
+        android:background="@drawable/newbackground">
 
         <EditText
             android:id="@+id/treeName"
