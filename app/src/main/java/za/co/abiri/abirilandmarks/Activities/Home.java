@@ -47,9 +47,6 @@ public class Home extends AppCompatActivity
 
     // Webview banner
 
-
-
-
     //private AppBarConfiguration mAppBarConfiguration;
     //private ActivityHome2Binding binding;
 
@@ -64,14 +61,8 @@ public class Home extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        ///ORIGINAL CODE///
-        //binding = ActivityHome2Binding.inflate(getLayoutInflater());
-        //setContentView(binding.getRoot());
-
-        //setSupportActionBar(binding.appBarHome.toolbar);
-
         //Added Code
-        //Init
+        //Init for Firebase
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
@@ -89,32 +80,7 @@ public class Home extends AppCompatActivity
             }
         });
 
-        /*
-        binding.appBarHome.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-         */
-
-        /* ORIGINAL CODE
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_profile, R.id.nav_settings, R.id.nav_signout)
-                .setOpenableLayout(drawer)
-                .build();
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-
-         */
-
+        // Calling the Correct layout file
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -124,7 +90,7 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Added code
+        //Added code to update to the correct navigation view
         updateNavHeader();
 
         //Set Home Fragment as Default
@@ -137,8 +103,11 @@ public class Home extends AppCompatActivity
     }
 
 
-
-    ///POPUP METHOD///
+    /**
+     * Popup method
+     * Shows different menu options
+     * Currently disabled loading profile images
+     */
     private void initPopup() {
 
         popAddPost = new Dialog(this);
@@ -213,8 +182,9 @@ public class Home extends AppCompatActivity
     ///End of Popup method
 
 
-
-    ///NEW CODE THAT MIGHT NOT WORK
+    /**
+     * Back method to close the drawer
+     */
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -235,21 +205,15 @@ public class Home extends AppCompatActivity
     }
 
 
-    /* ORIGINAL CODE
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
-     */
 
-    //NEW CODE
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        /*
+         Handle action bar item clicks here. The action bar will
+         automatically handle clicks on the Home/Up button, so long
+         as you specify a parent activity in AndroidManifest.xml.
+         */
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -261,7 +225,12 @@ public class Home extends AppCompatActivity
     }
 
 
-    //NEW CODE
+    /**
+     * Section to manage navigation
+     * Switches to fragment selected
+     * If you add new fragments, you need to initialise them here
+     * @return true
+     */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -307,8 +276,10 @@ public class Home extends AppCompatActivity
     }
 
 
-
-    //Added Code
+    /**
+     * Method to show username, email and photo in the navigation header
+     * User photo is currently disabled.
+     */
     public void updateNavHeader() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
