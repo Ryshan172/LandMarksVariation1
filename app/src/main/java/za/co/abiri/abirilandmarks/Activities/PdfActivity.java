@@ -30,6 +30,10 @@ import com.google.firebase.storage.UploadTask;
 import za.co.abiri.abirilandmarks.Models.Pdfmod;
 import za.co.abiri.abirilandmarks.R;
 
+/**
+ * Method to add pdf and send to database
+ * Based on LocationActivity code -> see documentation
+ */
 public class PdfActivity extends AppCompatActivity {
 
     private final static int PReqCode = 2;
@@ -138,6 +142,10 @@ public class PdfActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Store data in Pdfs path in firebase storage
+     * @param pdfmod
+     */
     private void addpdfmod(Pdfmod pdfmod) {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -188,6 +196,10 @@ public class PdfActivity extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Open files to get pdf
+     */
     private void openFiles() {
 
         //open File intent and wait for user to pick image

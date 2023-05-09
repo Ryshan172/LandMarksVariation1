@@ -44,6 +44,11 @@ import com.google.firebase.storage.UploadTask;
 import za.co.abiri.abirilandmarks.Models.Post;
 import za.co.abiri.abirilandmarks.R;
 
+/**
+ * Class for adding in data to send to storage
+ * Uses geolocation service to tag location
+ * Uses firebase database
+ */
 public class LocationActivity extends AppCompatActivity {
 
     FusedLocationProviderClient mFusedLocationClient;
@@ -128,7 +133,6 @@ public class LocationActivity extends AppCompatActivity {
                 && pickedImageUri != null ) {
 
                     //No issues, no empty values
-                    //TODO: Create Post object to add to firebase
 
                     //ACCESS FIREBASE STORAGE
                     //Storing in landmark_images
@@ -154,18 +158,6 @@ public class LocationActivity extends AppCompatActivity {
                                             pstBrDate.getText().toString(),
                                             pstDetails.getText().toString());
 
-
-                                    /*
-
-                                    //CREATE POST OBJECT AND FILL WITH VALUES
-                                    Post post = new Post(popupTitle.getText().toString(),
-                                            popupDescription.getText().toString(),
-                                            latitudeTextView.getText().toString(),
-                                            imageDownloadLink,
-                                            currentUser.getUid(),
-                                            currentUser.getDisplayName(),
-                                            currentUser.getPhotoUrl().toString());
-                                     */
 
                                     //ADD POST TO FIREBASE
                                     addPost(post);
@@ -217,7 +209,10 @@ public class LocationActivity extends AppCompatActivity {
 
     }
 
-    //Add post method
+    /**
+     * Method to add post object to firebase storage
+     * @param post
+     */
     private void addPost(Post post) {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -252,7 +247,10 @@ public class LocationActivity extends AppCompatActivity {
 
     }
 
-    ///Image Code
+    /**
+     * Method to check for permission to access images and location
+     * Toasts are request messages
+     */
     private void checkAndRequestForPermission() {
 
         //Cases
@@ -284,7 +282,12 @@ public class LocationActivity extends AppCompatActivity {
         //Check if deprecated API causes any issues
     }
 
-    //Override method
+    /**
+     * Override method to get image and set to ImageUri
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -302,8 +305,9 @@ public class LocationActivity extends AppCompatActivity {
     }
 
 
-
-
+    /**
+     * Code for Geolocation
+     */
     //GEOLOCATION CODE//
     @SuppressLint("MissingPermission")
     private void getLastLocation() {
